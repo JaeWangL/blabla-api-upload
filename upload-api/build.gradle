@@ -1,0 +1,21 @@
+dependencies {
+    // Spring
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Service discovery
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    // Centralized configuration
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-kafka'
+
+    // Azure Blob Storage
+    implementation 'com.azure:azure-storage-blob:12.15.0-beta.3'
+
+    // Actuator
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // Swagger
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
+}
