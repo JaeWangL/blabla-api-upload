@@ -7,10 +7,9 @@ import com.blabla.upload.api.dtos.UploadedThumbnailDTO;
 import com.blabla.upload.api.exceptions.FileUploadException;
 import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -29,9 +28,10 @@ public class BlobServiceImpl implements BlobService {
 
         assert filename != null;
         String blobName = String.format(
-            "%s_%s",
-            file.getOriginalFilename(),
-            DateTimeFormatter.BASIC_ISO_DATE.format(LocalDate.now()));
+            "%s_%s.%s",
+            FilenameUtils.removeExtension(filename),
+            System.currentTimeMillis(),
+            FilenameUtils.getExtension(filename));
         BlockBlobClient blockBlobClient = blobContainerClient.getBlobClient(blobName).getBlockBlobClient();
         try {
             /*
