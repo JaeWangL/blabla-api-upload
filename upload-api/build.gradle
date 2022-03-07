@@ -1,4 +1,6 @@
 dependencies {
+    implementation project(path: ":upload-common")
+
     // Spring
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
     implementation 'org.springframework.boot:spring-boot-starter-web'
