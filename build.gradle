@@ -2,6 +2,7 @@ buildscript {
     ext {
         springBootVersion = '2.6.4'
         springCloudVersion = '2021.0.0'
+        dockerPrefix = 'geotestregistry.azurecr.io'
     }
     repositories {
         mavenCentral()
@@ -37,7 +38,6 @@ subprojects {
 
     dependencies {
         // Utils
-        implementation 'me.paulschwarz:spring-dotenv:2.4.1'
         implementation 'org.apache.commons:commons-lang3:3.12.0'
         implementation 'commons-io:commons-io:2.11.0'
         compileOnly 'org.projectlombok:lombok:1.18.22'
