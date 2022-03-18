@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @Tag(name = "Thumbnail", description = "handling thumbnail rest api group")
 public class ThumbnailController {
-    private static final String CONTAINER_NAME = "test-thumbnail";
+    private static final String CONTAINER_NAME = "blabla-thumbnail-image";
     private final BlobService blobService;
 
     @CrossOrigin("*")
